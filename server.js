@@ -35,7 +35,7 @@ mongoose.connect("mongodb://localhost/week10PopulaterScraper", {
 
 // Connect to localhost if not a production environment
 if(process.env.NODE_ENV == 'production'){
-  mongoose.connect('');
+  mongoose.connect(' ');
 }
 
 else{
