@@ -12,8 +12,8 @@ $(document).on("click", ".save", function() {
     console.log(uniqueId);
 
     $.ajax({
-        method: "PUT",
-        url: "/articles/saved/" + uniqueId
+        method: "POST",
+        url: "/articles/save/" + uniqueId
     }).done(function(data) {
     	console.log("data");
     });

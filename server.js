@@ -64,7 +64,7 @@ app.get("/", function(req, res) {
 });
 
 app.get("/saved", function(req, res) {
-  Article.find({"saved": true}).populate("notes").then(function(error, articles) {
+  Article.find({"saved": true},function(error, articles) {
     var hbsObject = {
       article: articles
     };
