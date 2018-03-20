@@ -48,7 +48,7 @@ $("#scrape").on("click", function() {
 
 //Handle Save Article button
 $(".save").on("click", function() {
-	console.log("clicked");
+	console.log("clicked")
     var thisId = $(this).attr("data-id");
     $.ajax({
         method: "POST",
