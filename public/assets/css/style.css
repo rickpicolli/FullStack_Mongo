@@ -1,0 +1,12 @@
+body {
+	background-image: url("../images/wallpaper.png");
+}
+
+
+.panel-default {
+	background-color: white;
+}
+
+/*.panel-body {
+	background-color: white;
+}*/
