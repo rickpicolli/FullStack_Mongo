@@ -12,7 +12,7 @@ var Note = require("./models/Note.js");
 var Article = require("./models/Article.js");
 
 //defining the port
-var PORT = process.env.PORT || 3030
+var PORT = process.env.PORT || 3000
 
 // Initialize Express
 var app = express();
@@ -167,10 +167,11 @@ app.post("/articles/save/:id", function(req, res) {
 
 //delete a article from saved articles
 app.post("/articles/delete/:id", function(req, res) {
-	Article.findOneAndUpdate({ "_id": req.params.id }, { "saved": false, "notes": []})
+	Article.findOneAndUpdate({ "_id": req.params.id }, { "saved": false})
 	.then(function(deleteFromDb) {
       // If we were able to successfully find an Article with the given id, send it back to the client
       res.json(deleteFromDb);
+      
     })
     .catch(function(err) {
       // If an error occurred, send it to the client
