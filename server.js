@@ -28,7 +28,10 @@ app.use(express.static("public"));
 
 //handlebars
 var exphbs = require('express-handlebars');
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.engine("handlebars", exphbs({
+ defaultLayout: "main",
+ partialsDir: path.join(__dirname, "/views/layouts/partials")
+ }));
 app.set("view engine", "handlebars");
 
 // parse application/json
@@ -186,7 +189,6 @@ app.post("/notes/save/:id", function(req, res) {
     body: req.body.text,
     article: req.params.id
   });
-  console.log(req.body)
   newNote.save(function(error, note) {
     if (error) {
       console.log(error);
